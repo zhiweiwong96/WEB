@@ -27,24 +27,26 @@ form{
 
 </style>
 </head>
-<script>
 
-  function validationform(){
-    var username = document.loginform.user.value;
-    var password = document.loginform.pass.value;
-
-    if(username==null || username==""){
-      alert("Invalid Username Input");
-      return false;
-    }else if (password==null || password=="") {
-      alert("Invalid Password Input");
-      return false;
-    }
-  }
-
-</script>
 <body>
-     <center><h1>LOGIN</h1></center>
+
+  <script>
+
+    function validationform(){
+      var username = document.loginform.user.value;
+      var password = document.loginform.pass.value;
+
+      if(username==null || username==""){
+        alert("Invalid Username Input");
+        return false;
+      }else if (password==null || password=="") {
+        alert("Invalid Password Input");
+        return false;
+      }
+    }
+  </script>
+
+<center><h1>LOGIN</h1></center>
 
 <form name="loginform" action="adminLogin.php" method="POST" onsubmit="return validationform()">
 
