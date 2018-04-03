@@ -16,14 +16,66 @@ form{
 </style>
 <body>
 <h3> Login </h3>
-<form action="validation.php" method="post">
+<form action="" method="post">
   Username:<br>
-  <input type="text" name="username" required><br>
+  <input type="text" name="username"><br>
  
   Password:<br>
-  <input type="text" name="password" required><br>
+  <input type="text" name="password"><br>
 
-<input type="submit" value="submit"><br>
+<input type="submit" value="Login" name="submit" />  
 </form>
+
+<?php  
+
+function Connect()
+{
+	$dbhost = "localhost";
+	$dbuser = "root";
+	$dbpass = "";
+	$dbname = "aaa movie library";
+	
+	$conn = new mysqli($dbhost,$dbhost,'',$dbname) or die ($conn->connect_error);
+	return $conn;
+	
+}
+
+if(isset($_POST["submit"]))
+{  
+  
+	if(!empty($_POST['username']) && !empty($_POST['password'])) 
+	{  
+		$user=$_POST['username'];  
+		$pass=$_POST['password'];  
+  
+		$conn=Connect(); 
+  
+		$query=mysql_query("SELECT * FROM login WHERE username='".$username."' AND password='".$password."'");  
+		$numrows=mysql_num_rows($query);  
+		if($numrows!=0)  
+		{  
+			while($row=mysql_fetch_assoc($query))  
+			{  
+			$dbusername=$row['username'];  
+			$dbpassword=$row['password'];  
+			}  
+  
+		if($user == $dbusername && $pass == $dbpassword)  
+		{  
+			session_start();  
+			$_SESSION['sess_user']=$user;  
+  
+			/* Redirect browser */  
+			header("Location: t.php");  
+		}  
+    } else {  
+		echo "Invalid username or password!";  
+    }  
+  
+} else {  
+    echo "All fields are required!";  
+}  
+}  
+?>  
 </body>
 </html>
