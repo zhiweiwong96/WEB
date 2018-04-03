@@ -46,7 +46,7 @@ form{
 <body>
      <center><h1>LOGIN</h1></center>
 
-<form name="loginform" action="" method="POST" onsubmit="return validationform()">
+<form name="loginform" action="adminLogin.php" method="POST" onsubmit="return validationform()">
 
   Username: <br>
   <input type="text" name="user" placeholder="Enter your username"><br>

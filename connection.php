@@ -1,5 +1,7 @@
 <?php
 
+function Connect()
+{
 	$dbhost = "localhost";
 	$dbuser = "root";
 	$dbpass = "";
@@ -12,6 +14,9 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	}
-	echo "Connected successfully";
+
+	return $conn;
+
+}
 
 ?>
