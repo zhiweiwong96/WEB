@@ -25,8 +25,9 @@
     if($result->num_rows > 0){
 
       while($row = $result->fetch_assoc()){
-        echo "Welcome back $username";
-        header("Refresh: 2; url=home.php");
+        echo "Welcome back $username  <br> ";
+        echo "Page will return to Home Page in 3 seconds";
+        header("Refresh: 3; url=home(admin).php");
       }
 
     }else{
@@ -37,5 +38,6 @@
   }
   else{
     echo "User not found";
+    header("Refresh 3; url=home.php");
   }
 ?>

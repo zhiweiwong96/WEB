@@ -2,7 +2,9 @@
 <head>
   <title>Home</title>
   <h1 style="text-shadow: 5px 5px grey";>AAA MOVIE LIBRARY</h1>
-<?php include "TopNavigation.php"; ?><br>
+  <?php include "TopNavigation(Admin).php"; ?>
+
+</head>
 
 <style>
 
@@ -15,7 +17,6 @@ td{
 }
 
 </style>
-
 
 </head>
 
@@ -39,8 +40,8 @@ td{
         <tbody>
       	<?php while ($row = mysqli_fetch_array($results)) { ?>
       		<tr>
-            <td width="150"><?php echo $row['title']; ?></td>
-            <td width="100"><?php echo $row['year']; ?></td>
+      			<td width="150"><?php echo $row['title']; ?></td>
+      			<td width="100"><?php echo $row['year']; ?></td>
             <td width="100"><?php echo $row['genre']; ?></td>
             <td width="150"><img src=<?php echo $row['image']; ?>  width="100" height="100"></td>
             <td><?php echo $row['synopsis']; ?></td>
@@ -49,5 +50,3 @@ td{
         </tbody>
   </table>
 </body>
-
-</html>

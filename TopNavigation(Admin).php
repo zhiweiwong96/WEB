@@ -29,8 +29,11 @@ li a:hover {
 <body>
 
 <ul>
-  <li><a href="home.php" title='Home'>Home</a></li>
-  <li><a href="login.php" title='Login'>Login</a></li>
+  <li><a href="home(admin).php" title='Home'>Home</a></li>
+  <li><a href="create.php" title='Create Movie'>Create Movie</a></li>
+  <li><a href="update.php" title='Update Movie'>Update Movie</a></li>
+  <li><a href="delete.php" title='Delete Movie'>Delete Movie</a></li>
+  <li><a href="logout.php" title='Logout'>Logout</a></li>
 </ul>
 
 </body>
