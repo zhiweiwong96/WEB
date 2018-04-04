@@ -28,7 +28,7 @@ td{
 <body>
 
 <div>
-<input list="genre" id="myInput" onkeyup="search()">
+<input list="genre" id="myInput" placeholder="genre" onkeyup="search()">
    <datalist id="genre">
      <option value="Action">
      <option value="Crime">
@@ -37,8 +37,6 @@ td{
      <option value="Thriller">
    </datalist>
 </div>
-
-
 
   <table id="myTable">
       	<thead>

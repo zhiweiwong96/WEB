@@ -18,6 +18,7 @@
 <body>
 <div id="updateMovieForm">
   <form action="updateButton.php" method="POST" enctype="multipart/form-data" name="updateForm">
+    <input type="hidden" name="id" value="<?= $_GET['id']?>">
 
     <label>Title: </label><br>
     <input type='text' name='title' id='Title'><br>
