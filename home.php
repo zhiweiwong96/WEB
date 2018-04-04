@@ -26,7 +26,21 @@ td{
 ?>
 
 <body>
-  <table>
+
+<div>
+<input list="genre" id="myInput" onkeyup="search()">
+   <datalist id="genre">
+     <option value="Action">
+     <option value="Crime">
+     <option value="Drama">
+     <option value="Fantasy">
+     <option value="Thriller">
+   </datalist>
+</div>
+
+
+
+  <table id="myTable">
       	<thead>
       		<tr>
       			<th>Image</th>
@@ -49,5 +63,20 @@ td{
         </tbody>
   </table>
 </body>
+
+<script>
+
+function search(){
+  var searchText = document.getElementById('myInput').value;
+  var targetTable = document.getElementById('myTable');
+  Array.from(targetTable.getElementsByTagName('tr')).forEach(row => {
+      console.log(row.innerHTML);
+      row.style.display =
+        row.innerHTML.toLowerCase().indexOf(searchText.toLowerCase()) === -1 ?
+       'none' : '';
+  });
+}
+
+</script>
 
 </html>

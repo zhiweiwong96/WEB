@@ -10,7 +10,7 @@
   if (isset($_POST['update']))
   {
     $directory = "/img";
-    $file = $directory . basename($_FILES["newImageFile"]["name"]);
+    $file = $directory . basename($_FILES["imageFile"]["name"]);
     $upload = 1;
     $imageType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
 
@@ -65,12 +65,12 @@
       $query="UPDATE movie SET title='$title',year='$year',genre='$genre',image='$file',synopsis='$synopsis' WHERE video_id='$id'";
 
       if(!$conn->query($query)){
-        die("Fail to update movie: ".$conn->error);
+        die("Fail to updated movie: ".$conn->error);
       }
       else{
         echo'<script>
           window.alert("Update Movie Successfully");
-          window.location.href = "update.php"
+          window.location.href = "home(admin).php"
           </script>';
       }
 
