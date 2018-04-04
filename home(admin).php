@@ -30,20 +30,20 @@ td{
   <table>
       	<thead>
       		<tr>
-      			<th>Title</th>
+      			<th>Image</th>
+            <th>Title</th>
       			<th>Year</th>
             <th>Genre</th>
-            <th>Image</th>
             <th>Synopsis</th>
       		</tr>
       	</thead>
         <tbody>
       	<?php while ($row = mysqli_fetch_array($results)) { ?>
       		<tr>
+            <td width="150"><img src=<?php echo $row['image']; ?>  width="100" height="150"></td>
       			<td width="150"><?php echo $row['title']; ?></td>
       			<td width="100"><?php echo $row['year']; ?></td>
             <td width="100"><?php echo $row['genre']; ?></td>
-            <td width="150"><img src=<?php echo $row['image']; ?>  width="100" height="100"></td>
             <td><?php echo $row['synopsis']; ?></td>
       		</tr>
       	<?php } ?>

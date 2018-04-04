@@ -25,6 +25,7 @@ td{
   <table>
     <thead>
       <tr>
+        <th>Image</th>
         <th>Title</th>
         <th>Year</th>
         <th>Genre</th>
@@ -44,6 +45,7 @@ td{
 
   <?php while ($row = mysqli_fetch_array($result)) { ?>
   		<tr>
+        <td width="150"><img src=<?php echo $row['image']; ?>  width="100" height="150"></td>
   			<td width="200"><?php echo $row['title']; ?></td>
   			<td width="200"><?php echo $row['year']; ?></td>
         <td width="200"><?php echo $row['genre']; ?></td>
