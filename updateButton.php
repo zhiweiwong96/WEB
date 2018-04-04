@@ -9,7 +9,7 @@
 
   if (isset($_POST['update']))
   {
-    $directory = "/img";
+    $directory = "img/";
     $file = $directory . basename($_FILES["imageFile"]["name"]);
     $upload = 1;
     $imageType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
