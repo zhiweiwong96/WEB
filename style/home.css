@@ -1,0 +1,30 @@
+body{
+  background-image: url(b1.jpg);
+}
+
+table{
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: white;
+}
+tr {
+    border-bottom: 1px solid #cbcbcb;
+}
+th, td{
+    border: none;
+    height: 30px;
+    padding: 2px;
+}
+tr:hover {
+    background: #F5F5F5;
+}
+
+#search{
+  font-size: 100%;
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  background-color: white;
+  text-align: left;
+}

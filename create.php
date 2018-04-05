@@ -2,25 +2,27 @@
 <head>
 <title>Create Movie</title>
 
-<style>
-
-#createMovie{
-
-}
-
-</style>
+<link rel="stylesheet" type="text/css" href="style/createForm.css">
 
 <h1 style="text-shadow: 5px 5px grey";>AAA MOVIE LIBRARY</h1>
 <?php include "TopNavigation(Admin).php"; ?>
 
 </head>
 
+
+<?php
+  include 'checkLogin.php';
+
+?>
+
+<body>
+<h3>Complete the form</h3>
+
 <div id="createMovie">
-  <form action="createButton.php" method="POST" enctype="multipart/form-data" name="createMovieForm">
+  <form action="createButton.php" method="POST" enctype="multipart/form-data" name="createMovieForm" onsubmit="return validation()">
 
     <label>Title: </label><br>
     <input type='text' name='title' id='Title'><br>
-    <div id="title_input_error"></div>
 
     <label>Genre: </label>
     <select name="genre">
@@ -40,7 +42,7 @@
 
     <label>Synopsis: </label><br>
     <input type='text' name='synopsis' id='synopsis'><br>
-    <div id="synopsis_input_error"></div>
+
 
     <label>Image: </label>
     <input type='file' name='imageFile' id='image'><br>
@@ -49,55 +51,33 @@
   </form>
 
 </div>
+</body>
 
 <script>
 
   function validation()
   {
-    var InputNum=/^[0-9]+$/;
-    var title = document.forms['createMovieForm']['title'];
-    var synopsis = document.forms['createMovieForm']['synopsis'];
-    var text;
+    var title = document.forms["createMovieForm"]["title"].value;
+    var year = document.forms["createMovieForm"]["year"].value;
+    var genre = document.forms["createMovieForm"]["genre"].value;
+    var synopsis = document.forms["createMovieForm"]["synopsis"].value;
 
-    var title_input_error = document.getElementById("title_input_error");
-    var synopsis_input_error = document.getElementById("synopsis_input_error");
-
-    title.addEventListener('blur',verifyTitle,true);
-    synopsis.addEventListener('blur',verifySynopsis,true);
-
-    function verifyTitle(){
-      if(title.value != "")
-      {
-        title.style.border = "1px solid gray";
-        title_input_error.innerHTML = "";
-
-        return true;
+    if (title == "") {
+        alert("Title must be filled out");
+        return false;
+    }
+    else if (year == "") {
+          alert("Year must be filled out");
+          return false;
       }
-    }
-
-    function verifySynopsis(){
-      if(synopsis.value != "")
-      {
-        synopsis.style.border = "1px solid gray";
-        synopsis_input_error.innerHTML = "";
-      }
-    }
-
-    if(title.value =="")
-    {
-      title.style.border = "1px solid red";
-      title_input_error.textContent="Invalid title input";
-
-      return false;
-
-    }else if (synopsis.value ="")
-    {
-      synopsis.style.border = "1px solid red";
-      synopsis_input_error.textContent = "Invalid synopsis input"
-
-      return false;
-
-    }
+      else if (genre == "") {
+            alert("Genre must be filled out");
+            return false;
+          }
+          else if (synopsis == ""){
+            alert("Synopsis must be filled out");
+            return false;
+          }
   }
 
 </script>

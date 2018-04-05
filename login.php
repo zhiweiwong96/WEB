@@ -2,28 +2,9 @@
 <html>
 <head>
 <title>Login</title>
+<link rel="stylesheet" type="text/css" href="style/login.css">
 <style>
-body{
 
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 150px;
-    margin-left: 80px;
-    background-color: azure ;
-    font-family: verdana;
-    font-size: 100%
-}
-h3 {
-    color: indigo;
-    font-family: verdana;
-    font-size: 100%;
-}
-form{
-
-    font-family: verdana;
-    text-align: center;
-
-}
 
 </style>
 </head>

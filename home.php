@@ -2,19 +2,8 @@
 <head>
   <title>Home</title>
   <h1 style="text-shadow: 5px 5px grey";>AAA MOVIE LIBRARY</h1>
+  <link rel="stylesheet" type="text/css" href="style/home.css">
 <?php include "TopNavigation.php"; ?><br>
-
-<style>
-
-tr,th{
-  text-align: left;
-}
-
-td{
-  width="300";
-}
-
-</style>
 
 
 </head>
@@ -27,10 +16,9 @@ td{
 
 <body>
 
-<div>
+<div id="search">
 <label>Search : </label>
 <input list="keyword" id="myInput" placeholder="keyword" onkeyup="search()">
-
 </div>
 
   <table id="myTable">

@@ -2,25 +2,20 @@
 <head>
 <title>Update Movie</title>
 
-<style>
-
-tr,th{
-  text-align: left;
-}
-
-td{
-  width="300";
-}
-
-</style>
-
 <h1 style="text-shadow: 5px 5px grey";>AAA MOVIE LIBRARY</h1>
 <?php include "TopNavigation(Admin).php"; ?>
 
 </head>
 
+<link rel="stylesheet" type="text/css" href="style/update.css">
+
+<?php
+  include 'checkLogin.php';
+?>
+
 <body>
-<p>Select a movie that you want to update</p>
+
+<h3>Select a movie that you want to update</h3>
 
   <table>
     <thead>
@@ -57,4 +52,5 @@ td{
   </table>
 
 </body>
+
 </html>

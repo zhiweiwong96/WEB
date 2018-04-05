@@ -2,25 +2,19 @@
 <head>
 <title>Update Movie</title>
 
-<style>
-
-tr,th{
-  text-align: left;
-}
-
-td{
-  width="300";
-}
-
-</style>
-
 </head>
+
+<link rel="stylesheet" type="text/css" href="style/delete.css">
 
 <h1 style="text-shadow: 5px 5px grey";>AAA MOVIE LIBRARY</h1>
 <?php include "TopNavigation(Admin).php"; ?>
 
+<?php
+  include 'checkLogin.php';
+?>
+
 <body>
-<p>Select a movie that you want to delete</p>
+<h3>Select a movie that you want to delete</h3>
 
   <table>
     <thead>

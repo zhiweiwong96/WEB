@@ -2,32 +2,32 @@
 <head>
   <title>Home</title>
   <h1 style="text-shadow: 5px 5px grey";>AAA MOVIE LIBRARY</h1>
-  <?php include "TopNavigation(Admin).php"; ?>
 
-</head>
+  <link rel="stylesheet" type="text/css" href="style/home.css">
+  <?php include "TopNavigation(Admin).php"; ?><br>
 
-<style>
 
-tr,th{
-  text-align: left;
-}
-
-td{
-  width="300";
-}
-
-</style>
 
 </head>
 
 <?php
+
+  include 'checkLogin.php';
+  
   include('connection.php');
   $db=Connect();
   $results = mysqli_query($db, "SELECT * FROM movie");
 ?>
 
 <body>
-  <table>
+
+
+  <div id="search">
+  <label>Search : </label>
+  <input list="keyword" id="myInput" placeholder="keyword" onkeyup="search()">
+  </div>
+
+  <table id ="myTable">
       	<thead>
       		<tr>
       			<th>Image</th>
@@ -50,3 +50,18 @@ td{
         </tbody>
   </table>
 </body>
+
+<script>
+
+function search(){
+  var searchText = document.getElementById('myInput').value;
+  var targetTable = document.getElementById('myTable');
+  Array.from(targetTable.getElementsByTagName('tr')).forEach(row => {
+      console.log(row.innerHTML);
+      row.style.display =
+        row.innerHTML.toLowerCase().indexOf(searchText.toLowerCase()) === -1 ?
+       'none' : '';
+  });
+}
+
+</script>

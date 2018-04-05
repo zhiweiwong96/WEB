@@ -1,0 +1,20 @@
+body{
+  background-image: url(b2.jpg);
+}
+
+form {
+    width: 20%;
+    margin: 100px auto;
+    text-align: center;
+    font-family: verdana;
+    padding: 20px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    background-color: white;
+
+}
+
+h1 {
+    color:white;
+    font-size: 300%;
+}

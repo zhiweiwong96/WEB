@@ -2,22 +2,18 @@
 <head>
 <title>Update Form</title>
 
-<style>
-
-
-
-</style>
+<link rel="stylesheet" type="text/css" href="style/updateForm.css">
 
 <h1 style="text-shadow: 5px 5px grey";>AAA MOVIE LIBRARY</h1>
 <?php include "TopNavigation(Admin).php"; ?>
 
 </head>
 
-<p>List down the detail of the Movie</p>
+<h3>List down the detail of the Movie</h3>
 
 <body>
 <div id="updateMovieForm">
-  <form action="updateButton.php" method="POST" enctype="multipart/form-data" name="updateForm">
+  <form action="updateButton.php" method="POST" enctype="multipart/form-data" name="updateForm" onsubmit="return validation()">
     <input type="hidden" name="id" value="<?= $_GET['id']?>">
 
     <label>Title: </label><br>
@@ -52,4 +48,33 @@
   </form>
 </div>
 </body>
+
+<script>
+
+function validation()
+{
+  var title = document.forms["updateForm"]["title"].value;
+  var year = document.forms["updateForm"]["year"].value;
+  var genre = document.forms["updateForm"]["genre"].value;
+  var synopsis = document.forms["updateForm"]["synopsis"].value;
+
+  if (title == "") {
+      alert("Title must be filled out");
+      return false;
+  }
+  else if (year == "") {
+        alert("Year must be filled out");
+        return false;
+    }
+    else if (genre == "") {
+          alert("Genre must be filled out");
+          return false;
+        }
+        else if (synopsis == ""){
+          alert("Synopsis must be filled out");
+          return false;
+        }
+}
+</script>
+
 </html>
