@@ -28,14 +28,9 @@ td{
 <body>
 
 <div>
-<input list="genre" id="myInput" placeholder="genre" onkeyup="search()">
-   <datalist id="genre">
-     <option value="Action">
-     <option value="Crime">
-     <option value="Drama">
-     <option value="Fantasy">
-     <option value="Thriller">
-   </datalist>
+<label>Search : </label>
+<input list="keyword" id="myInput" placeholder="keyword" onkeyup="search()">
+
 </div>
 
   <table id="myTable">
