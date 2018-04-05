@@ -13,7 +13,7 @@
 <?php
 
   include 'checkLogin.php';
-  
+
   include('connection.php');
   $db=Connect();
   $results = mysqli_query($db, "SELECT * FROM movie");
@@ -65,3 +65,4 @@ function search(){
 }
 
 </script>
+</html>

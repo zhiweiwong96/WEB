@@ -59,19 +59,19 @@ function validation()
   var synopsis = document.forms["updateForm"]["synopsis"].value;
 
   if (title == "") {
-      alert("Title must be filled out");
+      alert("Title cannot be blank");
       return false;
   }
   else if (year == "") {
-        alert("Year must be filled out");
+        alert("Year cannot be blank");
         return false;
     }
     else if (genre == "") {
-          alert("Genre must be filled out");
+          alert("Genre cannot be blank");
           return false;
         }
         else if (synopsis == ""){
-          alert("Synopsis must be filled out");
+          alert("Synopsis cannot be blank");
           return false;
         }
 }
